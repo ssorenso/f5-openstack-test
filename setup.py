@@ -33,7 +33,7 @@ setup(
                       'pytest >= 2.9.1',
                       'pytest-cov >= 2.2.1',
                       'mock >= 1.3.0',
-                      'f5-sdk >= 2.1.0',
+                      'f5-sdk >= 2',
                       'python-neutronclient >= 2.3.11',
                       'python-keystoneclient >= 2.3.1',
                       'python-heatclient >= 0.3.0',
