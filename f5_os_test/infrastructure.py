@@ -13,17 +13,7 @@
 # limitations under the License.
 #
 
-from f5.bigip import ManagementRoot
-from pprint import pprint as pp
 import pytest
-
-
-@pytest.fixture
-def bigip(symbols, scope="module"):
-    '''bigip fixture'''
-    return ManagementRoot(
-        symbols.bigip_ip, symbols.bigip_username, symbols.bigip_password
-    )
 
 
 @pytest.fixture
@@ -41,7 +31,6 @@ def nclientmanager(symbols, polling_neutronclient):
 @pytest.fixture
 def setup_with_nclientmanager(request, nclientmanager):
     def finalize():
-        pp('Entered setup/finalize.')
         nclientmanager.delete_all_lbaas_healthmonitors()
         nclientmanager.delete_all_lbaas_pools()
         nclientmanager.delete_all_listeners()
